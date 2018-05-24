@@ -1,0 +1,565 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.pad-10{padding:10px;}
+.pad-15{padding:15px;}
+.pad-top-15{padding-top:15px}
+.pad-bottom-15{padding-bottom:15px}
+.mar-top-100{margin-top: 50px}
+.font-600{font-weight: 600;}
+.white{color: #fff}
+.link{
+    text-decoration: none;
+}
+.link:hover{
+    text-decoration: none;
+}
+.link a {
+    text-decoration: none;
+}
+.link a:hover{
+    text-decoration: none;
+}
+.easy-autocomplete-container{
+    color: #000;
+}
+.box{
+    box-shadow: 0px 0px 6px #e4e4e4;   
+    padding: 20px;
+    margin-bottom: 10px;
+    height: auto;
+}
+.box:hover{
+    box-shadow: 0px 0px 12px #e4e4e4; 
+    color: #fff;
+}
+.box-icon{
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.stats{
+    font-size: 20px;
+    font-weight: 600;
+}
+.navbar-inverse{
+    background: #000!important;
+}
+.navbar-inverse .navbar-nav>li>a {
+    padding: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+    color: #fff!important;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+    background: #ea6300!important;
+    border-top: 0.5px solid #e4e4e4;
+    border-bottom: 0.5px solid #e4e4e4;
+}
+.dropdown-menu{
+    background: #ea6300!important;
+}
+header{
+    min-height: 50px;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+}
+.header-h {
+    color: #FFB03B;
+    font-size: 46px;
+    font-family: 'Satisfy', sans-serif;
+    font-weight: 300;
+}
+.header-p {
+    color: #9699a6;
+    font-size: 16px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s
+}
+.sidenav a:hover {
+    padding: 15px;
+    background: darkorange;
+}
+.menu-icon{
+    color: #fff;
+    width: 60px;
+    padding: 5px;
+    padding-left: 15px;
+    font-size: 30px;
+    margin-top: 1%;
+    cursor: pointer;
+    border: 2px solid gray;
+    border-radius: 10px 10px 10px 10px;
+}
+.navbar{
+    border: 0px;
+    background: #fff;
+}
+.navbar-inverse .navbar-toggle .icon-bar{
+    background-color: #171515;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    background: #fff;
+}
+.fundoMenu {
+    background: white;
+    width: 100%;
+    margin-left: 0%;
+}
+.navbar-nav li:hover {
+    background: #ea6300;
+}
+.fullbg{
+    background-image: url(../img/bkhome7.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    //height: 100%;
+    height: auto;
+    position: relative;
+}
+.content{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content h2{
+    text-shadow: 2px 2px #000;
+}
+.content a{
+    background: darkorange;
+    color: #fff;
+}
+.min-heigth-100{
+    min-height: 100%;
+}
+.top_title{
+    margin: auto;
+    font-size: 3.125rem;
+    color: #fff;
+    text-align: center;
+    z-index: 20;
+}
+#banner {
+    width: 100%;
+    // background: url(../img/bkhome7.jpg);
+    //height: 100%;
+    //background-position: center center;
+    //background-repeat: no-repeat;
+    //background-attachment: fixed;
+    //background-size: cover;
+}
+#banner img {
+    width: 100%;
+    //opacity: 0.7;
+    float: left;
+}
+.formulario{
+    opacity: 0.8;
+    background: black;
+    height: auto;
+}
+.center{
+    text-align: center;
+}
+.min-heigth {
+    min-height: 210px;
+}
+.bg-black{
+    backgrond: black !important;
+}
+.em2{
+    font: 2em Satisfy-Regular !important;
+}
+.sobre{
+    padding-top: 15px;
+    color: #e1e1e3;
+}
+.sobre-text{
+    padding-top: 170px;
+}
+.sobre-map {
+    margin-bottom: 15px;
+}
+.cardapio{
+    margin-top: 20px;
+}
+.height-100{
+    height: 100%;
+}
+#cardapio {
+    background: #4b4b4d;
+}
+.cardapio-fonts{
+    color: #e1e1e3;
+    font-family: Satisfy-Regular;
+}
+.cardapio-title{
+    font-size: 4em;
+}
+.category {
+    /*border: 1px solid #e1e1e3;*/
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.category-hr{
+    width: 60%;
+    margin-top: 20px;
+}
+.category-title h1 {
+    font-size: 3em;
+}
+.category-item {
+    padding-top: 10px;
+}
+.produto-down {
+    font-size: 15px;
+}
+.category-item-name a{
+    text-decoration: none;
+}
+.category-item-name a:hover{
+    text-decoration: none;
+    color: #e4e4e4;
+}
+.category-item-name a:active{
+    text-decoration: none;
+    color: #e4e4e4;
+}
+.category-item-name a:focus{
+    text-decoration: none;
+    color: #e4e4e4;
+}
+.category-item-name-font-item {
+    font-size: 1.8em;
+}
+.category-item-name i {
+    margin-right: 20px;
+}
+.category-item-price{
+    padding-bottom: 12px;
+}
+.category-item-details p {
+    color: #e1e1e3;
+    font-size: 1.6em;
+}
+.category-item-buy {
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+.category-item-buy a, .category-item-buy a:hover{
+    text-decoration: none;
+    color: e1e1e3;
+}
+.preco{
+    color: #d80a0a;
+}
+#depoimentos{
+    margin-top: 2em;
+    background: url(../img/burg.jpg) fixed no-repeat top;
+    color: #fff;
+}
+.depoimentos-item{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.depoimentos-item-center{
+    padding-top: 25px;
+}
+#depoimentos i{
+    margin-top: 10px;
+    font-size: 4.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+#depoimentos p {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    font: 18px Tahoma, Verdana;
+    text-shaddow: 1px 1px #000;
+}
+footer {
+    margin-top: auto;
+    background: #333;
+    color: white;
+    padding: 2em;
+    font: 13px Tahoma, Arial;
+    float: left;
+    width: 100%;
+    height: 7em;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+}
+footer a:hover {
+    color: black;
+    text-decoration:none;
+}
+.esquerda {
+    float: left;
+    margin-left: 1em;
+}
+.linha {
+    background: darkorange;
+    width: 100%;
+    height: 1px;
+}
+.clear{
+    clear: both;
+}
+.contato {
+    color: #e1e1e3;
+    padding-top: 35px;
+}
+.logo {
+    width: 4em;
+    margin-right: -1em;
+    margin-top: -1em;
+}
+.logo-user{
+    width: 4em;
+    margin-top: 5px;
+}
+#tela_pedido {
+    //width: 100%;
+    //padding: 10%;
+    //height: 86.2%;
+    //background: url(../img/bkhome7.jpg) fixed no-repeat top;
+    //background-size: cover;
+    color: white;
+}
+#tela_pedido button {
+    text-decoration: none;
+    color: black;
+}
+.opc {
+    margin: 2%;
+    background: #f1f1f1;
+    width: 50%;
+    margin-left: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 0.5s; 
+    height: 10em;
+    padding-top: 5px;
+    border-radius: 30px 0 25px 0;
+}
+.opc:hover {
+    background: #ccc;
+}
+#tela_cadastro {
+    width: 100%;
+    padding: 2%;
+    min-height: 575px;
+    /*background: url(../img/bkhome7.jpg) fixed no-repeat top;*/
+    background-size: cover;
+    color: white;
+}
+.cadastro-usuario{
+    color: #fff;
+}
+#tela_cadastro button {
+    text-decoration: none;
+    color: black;
+}
+.corpo {
+    width: 100%;
+    margin-bottom: 25em;
+}
+.data {
+    float: right;
+    margin-right: 1%; 
+    font-weight: bold;
+    padding: 10px;
+    background: gray;
+    color: white;
+}
+.panel-default {
+    width: 25%;
+    margin-left: 35%;
+    margin-top: 2em;
+}
+.panel-body button {
+    background: black;
+    color: lightgray;
+}
+.img-panel {
+    margin-top: 8em;
+    width: 90px;
+}
+#home {
+    width: 100%;
+    margin-bottom: 13.2em;
+}
+#meio {
+    padding-top: 5em;
+    opacity: 0.5;
+    font-weight: bold;
+
+}
+.formContato {
+    margin-top: 5em;
+    margin-left: 7em;
+}
+.inputs1 {
+    width: 15%;
+    float: left;
+}
+.inputs2 {
+    width: 80%;
+    float: right;
+}
+.help-block ul li{
+    font-size: 16px;
+    font-weight: 600;
+    color: red;
+    list-style-type: none;
+}
+#promol::before{
+    content: "";
+    width: 1px;
+    height: 80%;
+    border-radius: 30px;
+    margin-left: 104%;
+    margin-top: 15%;
+    background: lightgray;
+    position: absolute;
+}
+.ingredientes-title{
+    color: darkorange;
+}
+.promo-height{
+    min-height: 390px;
+}
+.img-promo{
+    max-height: 215px;
+}
+.btn-veja-mais{
+    margin-top: 20px;
+    border: 1px solid #f2f2f2;
+    padding: 10px;
+    width: 200px;
+    background: #c93801;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px; 
+}
+.btn-veja-mais:hover{
+    color: #fff;
+}
+.btn-veja-mais:active{
+    color: #fff;
+}
+.btn-veja-mais:focus{
+    color: #fff;
+}
+.btn-cad {
+    background: transparent;
+}
+.btn-orange {
+    background: darkorange;
+    font-color: white;
+}
+.botaocinza {
+    background: #f1f1f1;
+    border: 0;
+    font-weight: bold;
+    border-radius: 5px 0 5px 0;
+    height: 3.1em;
+}
+.botaocinza:hover {
+    background: #ccc;
+}
+.btn-buy {
+    background: transparent;
+    color: #e1e1e3;
+    border: 1px solid #e1e1e3;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 6px 12px;
+}
+.btn-buy-disabled {
+    cursor: no-drop;
+}
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #333!important;
+    border: 1px solid #bbafaf!important;
+    background: transparent!important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #333!important;
+    border: 1px solid #bbafaf!important;
+    background: transparent!important;
+}
+.table.dataTable.no-footer{
+    border-bottom: 1px solid #e2dfdf!important;
+}
+.dataTables_wrapper .dataTables_filter input{
+    border-radius: 3px!important;
+    border: 1px solid #bbafaf!important;
+    font-weight: 500;
+    padding: 3px;
+}
+.dataTables_length select{
+    border-radius: 3px;
+    border: 1px solid #bbafaf!important;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: 500;
+}
+.table.dataTable thead td{
+    border-bottom: 1px solid #e2dfdf!important;
+}
+.relatorio-header{
+    border: 1px solid #e4e4e4;
+    padding: 5px;
+}
+.relatorio-header-item{
+    border-right: 1px solid #e4e4e4;
+    font-weight: 500;
+    padding-top: 10px;
+    text-align: center;
+}
+.relatorio-header-item p {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.impressao{}
+.impressao p{font-weight: 700;}

@@ -1,0 +1,57 @@
+<?php
+include "verificaCep.php";
+include "estiloFontes.html";
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LanXonetis</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontawesome/fontawesome-all.min.css">
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="shortcut icon" href="arquivos/log.ico">
+
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>	
+        <script type="text/javascript" src="js/jquery.mask.js"></script>
+        <script type="text/javascript" src="js/jquery.maskMoney.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-inputmask.min.js"></script>
+        <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+    </head>
+
+    <script>
+        $(function () {
+            //validação dos campos
+            $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+
+            //Função para formatar valores
+            $(".valor").maskMoney({
+                thousands: ".",
+                decimal: ","
+            });
+        });
+    </script>
+
+    <header id="header">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.php" onclick="closeNav()">Home</a>
+            <a href="sobre.php" onclick="closeNav()">Quem Somos</a>
+            <a href="cardapio.php" onclick="closeNav()">Cardápio</a>	
+            <a href="contato.php" onclick="closeNav()">Contato</a>					  
+            <a href="pedidos.php" onclick="closeNav()">Login</a>					  
+        </div>
+        <div class="container">
+            <div class="col-md-12">
+                <!-- Use any element to open the sidenav -->
+                <span onclick="openNav()" class="pull-right menu-icon" title="Navegação" alt="Navegação">☰</span>
+            </div>
+
+        </div>
+    </header>

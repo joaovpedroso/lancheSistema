@@ -1,0 +1,77 @@
+<?php
+    include "config/conecta.php";
+    include "estiloFontes.html";
+    include "verificaCep.php";
+    
+    if ( !isset( $_SESSION["usuario"] ) ){
+
+        //Inicia a sessao
+        session_start();
+        
+        if( !isset( $_SESSION["usuario"]["id"] ) ){
+            header('Location: pedidos.php');
+        }else{
+            $id_user = $_SESSION["usuario"]["id"];
+        }
+
+    }
+    
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LanXonetis</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontawesome/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/estilo.css" type="text/css" >
+        <link rel="shortcut icon" href="arquivos/log.ico">
+    </head>
+
+    <body>
+
+        <div id="header">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="indexPedido.php" onclick="closeNav()">Home</a>
+                <a href="cardapio.php" onclick="closeNav()">Novo Pedido</a>
+                <a href="consultarPedido.php" onclick="closeNav()">Consultar Pedido</a>	
+                <a href='usuario.php?id=<?=$_SESSION["usuario"]["id"];?>' onclick='closeNav()'>Alterar Dados</a>
+                <a href="logout.php" onclick="closeNav()">Sair</a>					  
+            </div><div class="clearfix"></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!-- Use any element to open the sidenav -->
+                <span onclick="openNav()" class="pull-right menu-icon" title="Navegação" alt="Navegação">☰</span>
+            </div><div class="clearfix"></div>
+            
+        </div>
+
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>	
+        <script type="text/javascript" src="js/bootstrap-inputmask.min.js"></script>
+        <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+        <script type="text/javascript" src="js/jquery.mask.js"></script>
+        <script type="text/javascript" src="js/jquery.maskMoney.min.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+
+        <script>
+            $(function () {
+                //validação dos campos
+                $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+
+                //Função para formatar valores
+                $(".valor").maskMoney({
+                    thousands: ".",
+                    decimal: ","
+                });
+            });
+        </script>
+        <style>
+            body{
+                background: url(img/bkhome7.jpg) fixed no-repeat center;
+                background-size: cover;
+            }
+        </style>
