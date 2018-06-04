@@ -4,11 +4,11 @@
     $data = "";
     $id_user = trim( $_SESSION["usuario"]["id"] );
 
-    if (isset($_GET['data'])) {
+    if (isset($_POST['data'])) {
 
         $id = $_SESSION['usuario']['id'];
 
-        $data = trim($_GET['data']);
+        $data = trim($_POST['data']);
 
         if( empty($data) ){
             $erro = "<h3 class='alert alert-danger text-center'><b>Nenhuma data Informada</b></h3>";
@@ -36,7 +36,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
         <div class="row">
-            <form name="consulta" method="get" class="form-inline">
+            <form name="consulta" method="POST" class="form-inline">
                 <label class="control-label white"><b>Data do pedido:</b></label>
                 <input type="date" name="data" class="form-control" id="calendario">
                 <button class="btn btn-default" type="submit">Pesquisar</button><br>
