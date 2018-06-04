@@ -2,6 +2,7 @@
 
 <?php
     $data = "";
+    $id_user = trim( $_SESSION["usuario"]["id"] );
 
     if (isset($_GET['data'])) {
 
@@ -24,6 +25,7 @@
             INNER JOIN pagamento pag ON ( pag.id = p.id_pagamento )
             WHERE p.data = ? and p.id_usuario = ? ORDER BY p.data ";
     $consulta = $pdo->prepare($sql);
+    $data = "$data";
     $consulta->bindParam(1, $data);
     $consulta->bindParam(2, $id_user);
     $consulta->execute();

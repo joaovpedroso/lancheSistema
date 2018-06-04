@@ -52,7 +52,7 @@ if (isset($_GET["del"])) {
         <div class="control-group col-md-4">
             <label for="forma_pagamento">Forma de Pagamento:</label>
             <div class="controls">
-                <select name="forma_pagamento" class="form-control" required data-validation-required-message="Informe uma forma de pagamento">
+                <select name="forma_pagamento" id="forma_pagamento" class="form-control" required data-validation-required-message="Informe uma forma de pagamento">
                     <option value="">Selecione a Forma de Pagamento:</option>
 <?php
 $sql = "SELECT id,pagamento FROM pagamento ORDER BY pagamento";
@@ -73,7 +73,7 @@ while ($dados = $consulta->fetch(PDO::FETCH_OBJ)) {
         <div class="control-group col-md-4">
             <label for="forma_entrega">Forma de Entrega:</label>
             <div class="controls">
-                <select name="forma_entrega" class="form-control" required data-validation-required-message="Informe uma forma de entrega">
+                <select name="forma_entrega" id="forma_entrega" class="form-control" required data-validation-required-message="Informe uma forma de entrega">
                     <option value="">Selecione uma Forma de Entrega</option>
 <?php
 $sql = "SELECT id, entrega FROM forma_entrega ORDER BY entrega";
@@ -103,7 +103,7 @@ while ($dados = $consulta->fetch(PDO::FETCH_OBJ)) {
                 <div class="control-group">
                     <label for="observacao">Observações:</label>
                     <div class="controls">
-                        <textarea name="observacao" class="form-control" placeholder="Retirada de Ingrediente"></textarea>
+                        <textarea name="observacao" id="observacao" class="form-control" placeholder="Retirada de Ingrediente"></textarea>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@ while ($dados = $consulta->fetch(PDO::FETCH_OBJ)) {
                 <div class="control-group">
                     <label for="troco">Troco:</label>
                     <div class="controls">
-                        <input type="text" name="troco" class="form-control valor" placeholder="Valor do troco">
+                        <input type="text" name="troco" id="troco" class="form-control valor" placeholder="Valor do troco">
                     </div>
                 </div>
             </div>
@@ -254,4 +254,38 @@ echo
     };
     //Associar a função do Auto Complete ao campo input Cliente
     $("#cliente").easyAutocomplete(options);
+    
+    
+    $("#id_cliente").change(function(){
+        sessionStorage.setItem('id_cliente', $(this).val());
+    });
+    
+    $("#cliente").change(function(){
+        sessionStorage.setItem('cliente', $(this).val());
+    });
+    
+    $("#forma_pagamento").change(function(){
+        sessionStorage.setItem('forma_pagamento', $(this).val());
+    });
+    $("#forma_entrega").change(function(){
+        sessionStorage.setItem('forma_entrega', $(this).val());
+    });
+    $("#observacao").change(function(){
+        sessionStorage.setItem('observacao', $(this).val());
+    });
+    $("#troco").change(function(){
+        sessionStorage.setItem('troco', $(this).val());
+    });
+    
+    getDadosStorage();
+    
+    function getDadosStorage(){
+        $("#id_cliente").val(sessionStorage.getItem('id_cliente'));
+        $("#cliente").val(sessionStorage.getItem('cliente'));
+        $("#forma_pagamento").val(sessionStorage.getItem('forma_pagamento'));
+        $("#forma_entrega").val(sessionStorage.getItem('forma_entrega'));
+        $("#observacao").val(sessionStorage.getItem('observacao'));
+        $("#troco").val(sessionStorage.getItem('troco'));
+    }
+    
 </script>

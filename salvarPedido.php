@@ -109,9 +109,9 @@ if ($_POST) {
 
             if ($resultado->execute()) {
 
-                //Se inseriu tudo corretamente mostra mensagem
+                //Se inseriu tudo corretamente limpa dados da sessão e mostra mensagem
+                echo "<script>sessionStorage.clear();</script>";
                 echo "<script>alert('Pedido Realizado Com Sucesso'); location.href='indexPedido.php';</script>";
-
                 //FInaliza a Sessão - LIMPA o CArrinho
                 unset($_SESSION["produtos"]);
             } else {

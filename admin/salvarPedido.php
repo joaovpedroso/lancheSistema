@@ -94,7 +94,8 @@ if ($_POST) {
 
             if ($resultado->execute()) {
 
-                //Se inseriu tudo corretamente mostra mensagem
+                //Se inseriu tudo corretamente limpa os dados da sessão e mostra mensagem de sucesso
+                echo "<script>sessionStorage.clear();</script>";
                 echo "<script>alert('Pedido Realizado Com Sucesso'); location.href='listarPedido.php';</script>";
 
                 //FInaliza a Sessão - LIMPA o CArrinho

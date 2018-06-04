@@ -21,6 +21,11 @@ body{
 .link a:hover{
     text-decoration: none;
 }
+.link:focus{
+    text-decoration: none;
+    text-outline: none;
+    color: #fff;
+}
 .easy-autocomplete-container{
     color: #000;
 }

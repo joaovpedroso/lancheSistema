@@ -1,5 +1,11 @@
 <?php
+session_start();
 include "menu.html";
+
+if (!isset($_SESSION["usuario"]["id"])) {
+    echo "<script>location.href='pedidos.php';</script>";
+    exit;
+}
 
 $sql = "SELECT nome FROM usuario WHERE id = ? ";
 $consulta = $pdo->prepare($sql);

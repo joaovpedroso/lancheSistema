@@ -20,8 +20,6 @@ function verificaSessao() {
         
     } else {
         include "menuVisitante.html";
-        echo "<script>location.href='pedidos.php';</script>";
-        exit;
     }
 }
 

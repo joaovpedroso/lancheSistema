@@ -43,10 +43,10 @@ if (isset($_GET["del"])) {
                     <label class="control-label">Cliente</label>
                     <div class="controls">
                         <div class="col-md-2">
-                            <input type="text" name="id_cliente" class="form-control text-center" value="<?php echo $_SESSION['usuario']['id']; ?>" readonly>
+                            <input type="text" name="id_cliente" id="id_cliente" class="form-control text-center" value="<?php echo $_SESSION['usuario']['id']; ?>" readonly>
                         </div>	
                         <div class="col-md-10">
-                            <input type="text" name="cliente" class="form-control" value="<?php echo $_SESSION['usuario']['nome']; ?>" readonly>
+                            <input type="text" id="cliente" name="cliente" class="form-control" value="<?php echo $_SESSION['usuario']['nome']; ?>" readonly>
                         </div>	
                     </div>
                 </div>
@@ -66,7 +66,7 @@ if (isset($_GET["del"])) {
         <div class="control-group col-md-4">
             <label for="forma_pagamento">Forma de Pagamento:</label>
             <div class="controls">
-                <select name="forma_pagamento" class="form-control" required data-validation-required-message="Selecione uma forma de Pagamento">
+                <select name="forma_pagamento" id="forma_pagamento" class="form-control" required data-validation-required-message="Selecione uma forma de Pagamento">
                     <option value="">Selecione a Forma de Pagamento:</option>
                     <?php
                     $sql = "SELECT id,pagamento FROM pagamento ORDER BY pagamento";
@@ -87,7 +87,7 @@ if (isset($_GET["del"])) {
         <div class="control-group col-md-4">
             <label for="forma_entrega">Forma de Entrega:</label>
             <div class="controls">
-                <select name="forma_entrega" class="form-control" required data-validation-required-message="Selecione uma forma de Entrega">
+                <select name="forma_entrega" id="forma_entrega" class="form-control" required data-validation-required-message="Selecione uma forma de Entrega">
                     <option value="">Selecione uma Forma de Entrega</option>
                     <?php
                     $sql = "SELECT id, entrega FROM forma_entrega ORDER BY entrega";
@@ -114,7 +114,7 @@ if (isset($_GET["del"])) {
                 <div class="control-group">
                     <label for="observacao">Observações:</label>
                     <div class="controls">
-                        <textarea name="observacao" class="form-control" placeholder="Retirada de Ingrediente"></textarea>
+                        <textarea name="observacao" id="observacao" class="form-control" placeholder="Retirada de Ingrediente"></textarea>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@ if (isset($_GET["del"])) {
                 <div class="control-group">
                     <label for="troco">Troco:</label>
                     <div class="controls">
-                        <input type="text" name="troco" class="form-control valor" placeholder="Valor do troco">
+                        <input type="text" name="troco" id="troco" class="form-control valor" placeholder="Valor do troco">
                     </div>
                 </div>
             </div>
@@ -218,3 +218,35 @@ if (isset($_GET["del"])) {
         <a href="cardapio.php" class="btn btn-success">Adicionar Mais Produtos</a><br>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        id_cliente = $("#id_cliente").val();
+        cliente = $("#cliente").val();
+        sessionStorage.setItem('id_cliente', id_cliente );
+        sessionStorage.setItem('cliente', cliente );
+    });
+    
+    $("#forma_pagamento").change(function(){
+        sessionStorage.setItem('forma_pagamento', $(this).val());
+    });
+    $("#forma_entrega").change(function(){
+        sessionStorage.setItem('forma_entrega', $(this).val());
+    });
+    $("#observacao").change(function(){
+        sessionStorage.setItem('observacao', $(this).val());
+    });
+    $("#troco").change(function(){
+        sessionStorage.setItem('troco', $(this).val());
+    });
+    
+    getDadosStorage();
+    
+    function getDadosStorage(){
+        $("#id_cliente").val(sessionStorage.getItem('id_cliente'));
+        $("#cliente").val(sessionStorage.getItem('cliente'));
+        $("#forma_pagamento").val(sessionStorage.getItem('forma_pagamento'));
+        $("#forma_entrega").val(sessionStorage.getItem('forma_entrega'));
+        $("#observacao").val(sessionStorage.getItem('observacao'));
+        $("#troco").val(sessionStorage.getItem('troco'));
+    }
+</script>
