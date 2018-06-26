@@ -23,8 +23,9 @@ verificaPermissao();
     ?>
 
     <br>
-    <div class="table-responsive">
-        <table class="table table-responsive table-hover table-striped" id="tabelaCategoria">
+    <!--<div class="table-responsive">-->
+    <div class="">
+        <table class="table display nowrap" style="width:100%" id="tabelaCategoria">
             <thead>
                 <tr>
                     <td>Categoria</td>
@@ -82,6 +83,13 @@ verificaPermissao();
 
             //Aplicar a formatacao na tabela
             $("#tabelaCategoria").dataTable({
+                responsive: true,
+                "info": false,
+                "order": [[0, "desc"]],
+                columnDefs: [
+                    {responsivePriority: 1, targets: 0},
+                    {responsivePriority: 2, targets: -2}
+                ],
                 //Alterar Linguagem dos atributos
                 "language": {
                     //Quantidade de Itens por pagina

@@ -13,7 +13,7 @@ $consulta->execute();
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 thumbnail text-center pad-15">
                 <p>Filtrar Por Dia:</p>
-                <form name="filterDay" action="filtrar.php?f=dt" method="POST">
+                <form action="relVendasData.php" method="POST">
                     <div class="control-group">
                         <label for="data">Selecione o Dia:</label>
                         <div class="controls">
@@ -82,7 +82,7 @@ $consulta->execute();
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 thumbnail text-center pad-15">
                 <div class="row">
                     <br><p class="font-600">Usuários que nunca compraram</p>
-                    <a href="relUsuariosPedidos.php" class="btn btn-primary">Gerar Relatório</a>
+                    <a href="relUsuariosPedidos.php" class="btn btn-primary" target="_blank">Gerar Relatório</a>
                     <br>
                 </div>
             </div>
@@ -90,7 +90,15 @@ $consulta->execute();
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 thumbnail text-center pad-15">
                 <div class="row">
                     <br><p class="font-600">Produtos que nunca foram vendidos</p>
-                    <a href="relProdutosPedidos.php" class="btn btn-primary">Gerar Relatório</a>
+                    <a href="relProdutosPedidos.php" class="btn btn-primary" target="_blank">Gerar Relatório</a>
+                    <br>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 thumbnail text-center pad-15">
+                <div class="row">
+                    <br><p class="font-600">Produtos mais vendidos</p>
+                    <a href="relProdutosVendidos.php" class="btn btn-primary" target="_blank">Gerar Relatório</a>
                     <br>
                 </div>
             </div>

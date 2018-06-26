@@ -81,7 +81,7 @@ if (isset($_GET['id'])) {
                             <div class="control-group">
                                 <label for="rg">RG:</label>
                                 <div class="controls">
-                                    <input type="text" name="rg" placeholder="Informe seu RG" class="form-control rg" value="<?= $rg ?>" required data-mask="99.999.999-9" maxlenght="9" minlength="9" data-validation-minlength-message="Informe no mínimo 9 caracteres" data-validation-required-message="Campo de preenchimento obrigatório" >
+                                    <input type="text" name="rg" placeholder="Informe seu RG" class="form-control rg" value="<?= $rg ?>" required maxlenght="20" minlength="4" data-validation-minlength-message="Informe no mínimo 4 caracteres" data-validation-required-message="Campo de preenchimento obrigatório" >
                                 </div>  
                             </div>
                         </div>

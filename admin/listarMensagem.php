@@ -18,7 +18,7 @@ $consulta->execute();
                         <td>E-Mail</td>
                         <td>Telefone</td>
                         <td>Data</td>
-                        <td>Mensagem</td>
+                        <td>Ações</td>
                     </tr>
                 </thead>
 
@@ -38,7 +38,14 @@ $consulta->execute();
 								<td>$email</td>
 								<td>$telefone</td>
 								<td>$data</td>
-								<td  class='text-justify'>$mensagem</td>
+								<td>
+                                                                    <form action='detalheMensagem.php' method='post'>
+                                                                        <input type='hidden' name='id_mensagem' value='$id'>
+                                                                        <button type='submit' class='btn btn-default center-block' title='Visualizar' alt='Visualizar'>
+                                                                            <i class='fa fa-search'></i>
+                                                                        </button>
+                                                                    </form>
+                                                                </td>
 							</tr>
 							";
                     }

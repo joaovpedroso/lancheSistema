@@ -46,7 +46,7 @@
 
 			if ( empty( $dados->id ) ) {
 				//Email Incorreto ou Não Cadastrado
-				echo "<script>alert('Email não encontrado');history.back();</script>";
+				echo "<script>alert('Email não encontrado e/ou Usuário Inativo');history.back();</script>";
 			} else if ( $senha != $dados->senha ) {
 				//senha incorreta
 				echo "<script>alert('Senha incorreta');history.back();</script>";

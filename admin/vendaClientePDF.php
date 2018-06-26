@@ -13,22 +13,7 @@ $stylesheet = file_get_contents('../css/bootstrap.min.css');
 $css = file_get_contents('../css/estilo.css');
 $pdf->WriteHTML($stylesheet, 1);
 $pdf->WriteHTML($css, 1);
-
-$pdf->SetHTMLHeader("<div class='row impressao'>
-        <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 relatorio-header'>
-            
-            <div class='col-lg-1 col-md-1 col-sm-1 col-xs-2 relatorio-header-item'>
-                <p>Nº Pedido</p>
-            </div>
-            <div class='col-lg-7 col-md-7 col-sm-7 col-xs-6 relatorio-header-item'>
-                <p>Cliente</p>
-            </div>
-            <div class='col-lg-2 col-md-2 col-sm-2 col-xs-2 relatorio-header-item'>
-                <p>Valor</p>
-            </div>
-        </div>");
-
-
+$pdf->SetTitle('Relatório de Vendas por Cliente');
 
 if (isset($_GET['c'])) {
     $cliente = trim($_GET["c"]);
@@ -49,7 +34,28 @@ $consulta1 = $pdo->prepare($sql1);
 $consulta1->bindParam(1, $cliente);
 $consulta1->execute();
 
-
+$pdf->SetHTMLHeader("
+    <div class='container pad-bottom-50'>
+        <div class='row'>
+            <div class='col-xs-1'>
+                <img src='../img/logo.png' width='65' class='center-block'>
+            </div>
+            <div class='col-xs-6'>
+                <h3 class='text-left pad-top-10 pad-bottom-15'>Relatório de Vendas</h3>
+                <p class='pad-top-10'>Cliente: $nomeCliente</p>
+            </div>
+        </div>
+    </div>
+    <table class='table table-bordered table-stripped mar-bottom-0'>
+        <thead>
+            <tr>
+                <td class='text-center pad-10' width='15%'>Nº Pedido</td>
+                <td class='text-center pad-10' width='50%'>Cliente</td>
+                <td class='text-center pad-10' width='15%'>Data</td>
+                <td class='text-center pad-10' width='20%'>Valor</td>
+            </tr>
+        </thead>
+    </table>");
 
 
 while ($dados1 = $consulta1->fetch(PDO::FETCH_OBJ)) {
@@ -85,18 +91,16 @@ while ($dados1 = $consulta1->fetch(PDO::FETCH_OBJ)) {
         $status = $dados2->status;
         
         $html = "
-                    <div class='row relatorio-header'>
-                        <div class='col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center'>
-                            <p>$id</p>
-                        </div>
-                        <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center'>
-                            <p>$nomeCliente</p>
-                        </div>
-                        <div class='col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center'>
-                            <p>R$ $valorTotal</p>
-                        </div>
-                    </div>
-                </div>";
+            <table class='table table-bordered table-stripped mar-bottom-0'>
+                <thead>
+                    <tr>
+                        <td class='text-center pad-10' width='15%'>$id</td>
+                        <td class='text-left pad-10' width='50%'>$nomeCliente</td>
+                        <td class='text-left pad-10' width='15%'>$dataPed</td>
+                        <td class='text-center pad-10' width='20%'>$valorTotal</td>
+                    </tr>
+                </thead>
+            </table>";
 
 
         $pdf->WriteHTML($html, 2);

@@ -13,6 +13,7 @@ $stylesheet = file_get_contents('../css/bootstrap.min.css');
 $css = file_get_contents('../css/estilo.css');
 $pdf->WriteHTML($stylesheet, 1);
 $pdf->WriteHTML($css, 1);
+$pdf->SetTitle('Relatório de Venda por Produto');
 
 if (isset($_GET['p'])) {
     $produto = trim($_GET["p"]);
@@ -27,24 +28,28 @@ $consultaP->execute();
 $produtoNome = $dadosP = $consultaP->fetch(PDO::FETCH_OBJ)->nome;
 
 
-$pdf->SetHTMLHeader("<div class='row'>
-        <div class='row relatorio-header'>
-            
-                <div class='col-lg-1 col-md-1 col-sm-1 col-xs-4 relatorio-header-item'>
-                    <p>Produto</p>
-                </div>
-                <div class='col-lg-1 col-md-1 col-sm-1 col-xs-1 relatorio-header-item'>
-                    <p>Ped.</p>
-                </div>
-                <div class='col-lg-2 col-md-2 col-sm-2 col-xs-2 relatorio-header-item'>
-                    <p>Data</p>
-                </div>
-                <div class='col-lg-2 col-md-2 col-sm-2 col-xs-2 relatorio-header-item'>
-                    <p>R$</p>
-                </div>
+$pdf->SetHTMLHeader("
+    <div class='container pad-bottom-50'>
+        <div class='row'>
+            <div class='col-xs-1'>
+                <img src='../img/logo.png' width='65' class='center-block'>
             </div>
-        </div>");
-
+            <div class='col-xs-6'>
+                <h3 class='text-left pad-top-10 pad-bottom-15'>Relatório de Vendas</h3>
+                <p class='pad-top-10'>Produto: $produtoNome</p>
+            </div>
+        </div>
+    </div>
+    <table class='table table-bordered table-stripped mar-bottom-0'>
+        <thead>
+            <tr>
+                <td class='text-center pad-10' width='15%'>Nº Pedido</td>
+                <td class='text-center pad-10' width='50%'>Produto</td>
+                <td class='text-center pad-10' width='15%'>Data</td>
+                <td class='text-center pad-10' width='20%'>Valor</td>
+            </tr>
+        </thead>
+    </table>");
 
 $sql1 = "SELECT id_pedido FROM produto_pedido WHERE id_produto = ? GROUP BY id_pedido";
 $consulta1 = $pdo->prepare($sql1);
@@ -75,21 +80,18 @@ while ($dados1 = $consulta1->fetch(PDO::FETCH_OBJ)) {
         $data = $dia . "/" . $mes . "/" . $ano;
         $nomeCliente = $dados2->nome;
 
-        $html = "<div class='row'>
-                    <div class='row relatorio-header'>
-                        <div class='col-lg-2 col-md-2 col-sm-2 col-xs-4 text-center'>
-                            <p>$produtoNome</p>
-                        </div>
-                        <div class='col-lg-2 col-md-2 col-sm-2 col-xs-1 text-center'>
-                            <p>$id_pedido</p>
-                        </div>
-                        <div class='col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center'>
-                            <p>$data</p>
-                        </div>
-                        <div class='col-lg-2 col-md-2 col-sm-2 col-xs-2 text-center'>
-                            <p>$valorTotal</p>
-                        </div>
-                </div>";
+
+        $html = " 
+        <table class='table table-bordered table-stripped mar-bottom-0'>
+            <thead>
+                <tr>
+                    <td class='text-center pad-10' width='15%'>$id_pedido</td>
+                    <td class='text-center pad-10' width='50%'>$produtoNome</td>
+                    <td class='text-center pad-10' width='15%'>$data</td>
+                    <td class='text-center pad-10' width='20%'>$valorTotal</td>
+                </tr>
+            </thead>
+        </table>";
         $pdf->WriteHTML($html, 2);
     }
 }

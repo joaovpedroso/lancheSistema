@@ -25,7 +25,7 @@ if ($_POST) {
     } else if (empty($senha)) {
         echo "<script>alert('Preencha o campo senha');history.back();</script>";
     } else {
-        $sql = "SELECT * FROM usuario WHERE cpf = ? and ( id_tipo = 2 or id_tipo = 3  and ativo = 1 ) LIMIT 1";
+        $sql = "SELECT * FROM usuario WHERE cpf = ? and ( id_tipo = 2 or id_tipo = 3 )  and ativo = 1 LIMIT 1";
         $consulta = $pdo->prepare($sql);
         $consulta->bindParam(1, $usuario);
         $consulta->execute();
@@ -33,7 +33,7 @@ if ($_POST) {
         $dados = $consulta->fetch(PDO::FETCH_OBJ);
 
         if (empty($dados->id)) {
-            echo "<script>alert('Usuario nao encontrado');location.href='pedidos.php';</script>";
+            echo "<script>alert('Usuario não encontrado e/ou inativo');location.href='pedidos.php';</script>";
         } else if ($senha != $dados->senha) {
             //senha incorreta
             echo "<script>alert('Senha incorreta');history.back();</script>";

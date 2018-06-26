@@ -2,11 +2,22 @@ body{
     margin: 0;
     padding: 0;
 }
+a.black{
+    color: #000!important;
+}
+.pad-0{padding:0px!important;}
+.mar-0{margin:0px!important;}
 .pad-10{padding:10px;}
 .pad-15{padding:15px;}
+.pad-top-5{padding-top:5px}
+.pad-top-10{padding-top:10px}
 .pad-top-15{padding-top:15px}
+.pad-top-20{padding-top:20px}
 .pad-bottom-15{padding-bottom:15px}
+.pad-bottom-20{padding-bottom:20px}
+.pad-bottom-50{padding-bottom:50px}
 .mar-top-100{margin-top: 50px}
+.mar-bottom-0{margin-bottom: 0px!important}
 .font-600{font-weight: 600;}
 .white{color: #fff}
 .link{
@@ -568,3 +579,4 @@ footer a:hover {
 
 .impressao{}
 .impressao p{font-weight: 700;}
+.img-produtos{border-radius: 10px;}

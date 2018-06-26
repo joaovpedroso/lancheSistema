@@ -65,7 +65,7 @@ include "verificaHorario.php";
                     $imagem = $dadosProd->imagem;
 
                     $imagem = $imagem . "p.jpg";
-                    $img = "<img src= 'img/produtos/$imagem' class='img-responsive'>";
+                    $img = "<img src= 'img/produtos/$imagem' class='img-responsive img-produtos'>";
 
                     echo "
                             <div class='category-item'>
@@ -143,7 +143,7 @@ include "verificaHorario.php";
                     $imagem = $dadosProd->imagem;
 
                     $imagem = $imagem . "p.jpg";
-                    $img = "<img src= 'img/produtos/$imagem' class='img-responsive'>";
+                    $img = "<img src= 'img/produtos/$imagem' class='img-responsive img-produtos'>";
 
                     echo "
                             <div class='category-item'>

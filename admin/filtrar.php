@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../css/estilo.css">
 <?php
 include "menu.php";
 
@@ -19,6 +20,7 @@ include "menu.php";
                     <td><b>Status</b></td>
                 </tr>
             </thead>	
+            <tbody>
 
             <?php
             if (isset($_GET['f'])) {
@@ -132,10 +134,10 @@ include "menu.php";
 
                                 if ($itens == 0) {
                                     echo "
-										<div class='alert alert-danger'>
-											Nenhum Resultado Encontrado
-										</div>										
-										";
+                                    <div class='alert alert-danger'>
+                                        Nenhum Resultado Encontrado
+                                    </div>										
+                                    ";
                                 }
 
                                 echo "<a href='vendaDataPDF.php?dt=$data' target='_blank' class='btn btn-success pull-right'>Gerar PDF</a>";
@@ -146,9 +148,9 @@ include "menu.php";
                                     $id_pedido = $dados1->id;
 
                                     $sql2 = "SELECT p.data, p.valorTotal, s.status, u.nome FROM pedido p 
-										INNER JOIN status s ON s.id = p.id_status 
-										INNER JOIN usuario u ON u.id = p.id_usuario
-										WHERE p.id = ? ORDER BY p.data";
+                                            INNER JOIN status s ON s.id = p.id_status 
+                                            INNER JOIN usuario u ON u.id = p.id_usuario
+                                            WHERE p.id = ? ORDER BY p.data";
                                     $consulta2 = $pdo->prepare($sql2);
                                     $consulta2->bindParam(1, $id_pedido);
                                     $consulta2->execute();
@@ -166,13 +168,15 @@ include "menu.php";
                                         $nomeCliente = $dados2->nome;
 
                                         echo "
-											<tr>
-												<td>$id_pedido</a></td>
-												<td>$nomeCliente</td>
-												<td>$valorTotal</td>
-												<td>$data</td>
-												<td>$status</td>
-											</tr>";
+                                            
+                                                <tr>
+                                                        <td><a href='' class='link black'>$id_pedido</a></td>
+                                                        <td><a href='' class='link black'>$nomeCliente</a></td>
+                                                        <td><a href='' class='link black'>$valorTotal</a></td>
+                                                        <td><a href='' class='link black'>$data</a></td>
+                                                        <td><a href='' class='link black'>$status</a></td>
+                                                </tr>
+                                            ";
                                     }
                                 }
                             }
@@ -251,6 +255,7 @@ include "menu.php";
                 }
             }
             ?>	
+            </tbody>
         </table>
     </div>	
     <a href="relVendas.php" class="btn btn-primary">Voltar</a>

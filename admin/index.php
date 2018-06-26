@@ -57,7 +57,7 @@
 
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <label>Funcao:</label> 
+                                                <label>Função:</label> 
                                                 <div class="controls">
                                                     <select class="form-control" name="tipo" required data-validation-required-message="Campo de preenchimento obrigatório">
                                                         <option value="">Selecione Uma Função</option>
